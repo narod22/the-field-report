@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Field Report — Issue 001</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #E5E7EB;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .email-wrapper {
+      max-width: 620px;
+      margin: 32px auto;
+      background: #FFFFFF;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(15,39,63,0.10);
+    }
+
+    /* ── HEADER ── */
+    .header {
+      background: #0F273F;
+      padding: 28px 36px 24px;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .keycap-svg {
+      flex-shrink: 0;
+    }
+
+    .wordmark {
+      flex: 1;
+    }
+
+    .wordmark-title {
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      color: #FFFFFF;
+      line-height: 1;
+    }
+
+    .wordmark-title span {
+      color: #FFC107;
+    }
+
+    .wordmark-sub {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #6B7280;
+      margin-top: 4px;
+    }
+
+    /* ── META STRIP ── */
+    .meta-strip {
+      background: #F4F7FA;
+      border-bottom: 2px solid #FFC107;
+      padding: 10px 36px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .meta-date {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #6B7280;
+    }
+
+    .meta-issue {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: #0F273F;
+      background: #FFC107;
+      padding: 2px 8px;
+      border-radius: 2px;
+    }
+
+    /* ── BODY ── */
+    .body {
+      padding: 32px 36px;
+    }
+
+    .intro {
+      font-size: 15px;
+      font-weight: 400;
+      color: #0F273F;
+      line-height: 1.65;
+      margin-bottom: 24px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #E5E7EB;
+    }
+
+    .intro strong {
+      font-weight: 700;
+    }
+
+    /* Preview list */
+    .preview-box {
+      background: #F4F7FA;
+      border-left: 3px solid #0F273F;
+      padding: 14px 18px;
+      margin-bottom: 28px;
+      border-radius: 0 3px 3px 0;
+    }
+
+    .preview-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #6B7280;
+      margin-bottom: 8px;
+    }
+
+    .preview-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .preview-list li {
+      font-size: 13px;
+      font-weight: 500;
+      color: #0F273F;
+      line-height: 1.5;
+      padding: 2px 0;
+      padding-left: 16px;
+      position: relative;
+    }
+
+    .preview-list li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: #FF7403;
+      font-weight: 700;
+    }
+
+    /* ── SECTION HEADER ── */
+    .section-header {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.20em;
+      text-transform: uppercase;
+      color: #6B7280;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-header::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #E5E7EB;
+    }
+
+    /* ── NEWS STORIES ── */
+    .story {
+      margin-bottom: 24px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #E5E7EB;
+    }
+
+    .story:last-of-type {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .story-source {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #FF7403;
+      margin-bottom: 4px;
+    }
+
+    .story-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: #0F273F;
+      line-height: 1.3;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+
+    .story-body {
+      font-size: 14px;
+      font-weight: 400;
+      color: #374151;
+      line-height: 1.65;
+    }
+
+    .story-body strong {
+      font-weight: 700;
+      color: #0F273F;
+    }
+
+    .story-tip {
+      margin-top: 8px;
+      font-size: 13px;
+      font-style: italic;
+      color: #6B7280;
+      padding-left: 12px;
+      border-left: 2px solid #FFC107;
+    }
+
+    .story-read-more {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #FF7403;
+      text-decoration: none;
+      letter-spacing: 0.04em;
+    }
+
+    .story-read-more:hover {
+      text-decoration: underline;
+    }
+
+    /* ── DIVIDER ── */
+    .section-break {
+      margin: 32px 0;
+      border: none;
+      border-top: 2px solid #E5E7EB;
+    }
+
+    /* ── SKILL SECTION ── */
+    .skill-section {
+      background: #0F273F;
+      border-radius: 4px;
+      padding: 24px 28px;
+      margin-top: 32px;
+    }
+
+    .skill-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.20em;
+      text-transform: uppercase;
+      color: #FF7403;
+      margin-bottom: 6px;
+    }
+
+    .skill-title {
+      font-size: 18px;
+      font-weight: 900;
+      color: #FFFFFF;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .skill-title span {
+      color: #FFC107;
+    }
+
+    .skill-intro {
+      font-size: 13px;
+      font-weight: 400;
+      color: #D4DDE7;
+      line-height: 1.65;
+      margin-bottom: 20px;
+    }
+
+    .skill-steps {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 20px;
+    }
+
+    .skill-steps li {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .step-number {
+      font-size: 13px;
+      font-weight: 900;
+      color: #FFC107;
+      min-width: 20px;
+      flex-shrink: 0;
+      line-height: 1.65;
+    }
+
+    .step-content {
+      font-size: 13px;
+      color: #D4DDE7;
+      line-height: 1.65;
+    }
+
+    .step-content strong {
+      color: #FFFFFF;
+      font-weight: 700;
+    }
+
+    .prompt-box {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 3px;
+      padding: 14px 16px;
+      margin-top: 16px;
+    }
+
+    .prompt-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #FF7403;
+      margin-bottom: 8px;
+    }
+
+    .prompt-text {
+      font-size: 12px;
+      font-family: 'Inter', monospace;
+      color: #D4DDE7;
+      line-height: 1.7;
+    }
+
+    .privacy-note {
+      margin-top: 14px;
+      font-size: 12px;
+      color: #6B7280;
+      font-style: italic;
+      padding-left: 10px;
+      border-left: 2px solid #FF7403;
+    }
+
+    /* ── SIGN-OFF + FOOTER ── */
+    .sign-off {
+      padding: 28px 36px 0;
+      border-top: 1px solid #E5E7EB;
+      margin-top: 32px;
+    }
+
+    .sign-off-text {
+      font-size: 14px;
+      color: #374151;
+      line-height: 1.65;
+      margin-bottom: 20px;
+    }
+
+    .sign-off-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: #0F273F;
+    }
+
+    .rating-block {
+      background: #F4F7FA;
+      border-radius: 4px;
+      padding: 16px 20px;
+      margin: 20px 0;
+    }
+
+    .rating-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: #0F273F;
+      margin-bottom: 10px;
+    }
+
+    .rating-options {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .rating-options a {
+      font-size: 13px;
+      color: #374151;
+      text-decoration: none;
+      line-height: 1.8;
+    }
+
+    .rating-options a:hover {
+      color: #FF7403;
+    }
+
+    .footer {
+      padding: 20px 36px 28px;
+      background: #FFFFFF;
+    }
+
+    .footer-links-line {
+      font-size: 12px;
+      color: #9CA3AF;
+      line-height: 2;
+      margin-bottom: 4px;
+    }
+
+    .footer-links-line a {
+      color: #9CA3AF;
+      text-decoration: underline;
+    }
+
+    .footer-links-line a:hover {
+      color: #0F273F;
+    }
+
+    .footer-legal {
+      font-size: 11px;
+      color: #D1D5DB;
+      line-height: 1.8;
+    }
+
+    .story-title a {
+      color: #0F273F;
+      text-decoration: none;
+    }
+
+    .story-title a:hover {
+      text-decoration: underline;
+      color: #FF7403;
+    }
+
+    /* ── OFFER SECTION ── */
+    .offer-section {
+      background: #0F273F;
+      border-radius: 4px;
+      padding: 24px 28px;
+      margin-top: 32px;
+    }
+
+    .offer-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.20em;
+      text-transform: uppercase;
+      color: #FF7403;
+      margin-bottom: 6px;
+    }
+
+    .offer-title {
+      font-size: 20px;
+      font-weight: 900;
+      color: #FFFFFF;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .offer-title span {
+      color: #FFC107;
+    }
+
+    .offer-body {
+      font-size: 13px;
+      font-weight: 400;
+      color: #D4DDE7;
+      line-height: 1.65;
+      margin-bottom: 20px;
+    }
+
+    .offer-cta {
+      display: inline-block;
+      background: #FFC107;
+      color: #0F273F;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 3px;
+    }
+
+    .offer-cta:hover {
+      background: #FF7403;
+      color: #FFFFFF;
+    }
+  </style>
+</head>
+<body>
+
+<div class="email-wrapper">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-inner">
+
+      <!-- Keycap Logo SVG -->
+      <svg class="keycap-svg" width="52" height="52" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
+        <!-- Outer rounded rect -->
+        <rect x="1" y="1" width="50" height="50" rx="11" ry="11" fill="#1a3a54"/>
+        <!-- Orange inner stroke -->
+        <rect x="5.5" y="5.5" width="41" height="41" rx="8" ry="8" fill="none" stroke="#FF7403" stroke-width="2.5"/>
+        <!-- Yellow indicator dot -->
+        <circle cx="40" cy="11" r="3.5" fill="#FFC107"/>
+        <!-- TFR label -->
+        <text x="26" y="31" text-anchor="middle" font-family="Inter, -apple-system, sans-serif" font-weight="900" font-size="16" letter-spacing="-0.5" fill="#FFFFFF">TFR</text>
+      </svg>
+
+      <!-- Wordmark -->
+      <div class="wordmark">
+        <div class="wordmark-title">THE <span>FIELD</span> REPORT</div>
+        <div class="wordmark-sub">AI for international development</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- META STRIP -->
+  <div class="meta-strip">
+    <span class="meta-date">Week of April 28, 2026</span>
+    <span class="meta-issue">Issue 001</span>
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- Intro -->
+    <p class="intro">
+      Good Monday. The World Bank published its most important report of the year — the entire WDR 2026 is on AI — and almost nobody in the sector has had time to read it yet. This week: the parts that actually matter for practicing consultants, three other stories worth your attention, and the single highest-leverage setup you can do in Claude before your next project.
+    </p>
+
+    <!-- Preview box -->
+    <div class="preview-box">
+      <div class="preview-label">This week</div>
+      <ul class="preview-list">
+        <li>World Bank's WDR 2026: what it actually says (and what to skip)</li>
+        <li>DeepSeek V4: why cheap Chinese AI matters in the field</li>
+        <li>OpenAI's democratization principles, read skeptically</li>
+        <li>Anthropic agents just negotiated real deals — the model gap is real</li>
+        <li>Skill: the 5 inputs that fix generic AI output immediately</li>
+      </ul>
+    </div>
+
+    <!-- Section header -->
+    <div class="section-header">This week in AI + development</div>
+
+    <!-- Story 1 -->
+    <div class="story">
+      <div class="story-source">🌍 World Bank</div>
+      <div class="story-title"><a href="https://www.worldbank.org/en/publication/wdr2026" target="_blank" rel="noopener">The WDR 2026 is here. The headline is cautious optimism. The warning is more important.</a></div>
+      <p class="story-body">
+        The World Bank released its World Development Report 2026, focused entirely on AI for development. The headline finding: AI-delivered business advice via smartphones is already producing measurable productivity gains for small enterprises in several markets. That's the good news. The warning buried in Chapter 3 is sharper — <strong>computing infrastructure gaps, data deficits, and skills shortages could widen the divide</strong> between high and lower-income countries rather than close it. For consultants working on digital transformation projects, this document is now your go-to reference for grounding theory-of-change conversations.
+      </p>
+      <p class="story-tip">Skip to Chapter 3 if you're short on time. It's the most practical section for consultants advising on AI readiness.</p>
+      <a class="story-read-more" href="https://www.worldbank.org/en/publication/wdr2026" target="_blank" rel="noopener">Read the WDR 2026 &rarr;</a>
+    </div>
+
+    <!-- Story 2 -->
+    <div class="story">
+      <div class="story-source">🤖 DeepSeek / China AI</div>
+      <div class="story-title"><a href="https://techcrunch.com/2026/04/24/deepseek-previews-new-ai-model-that-closes-the-gap-with-frontier-models/" target="_blank" rel="noopener">DeepSeek V4 cuts prices 700x vs. GPT. For development organizations, the infrastructure angle matters more than the benchmarks.</a></div>
+      <p class="story-body">
+        DeepSeek released V4 this week with dramatically lower API pricing and, critically, <strong>support for Huawei chips</strong>. Most coverage focused on the US-China AI race angle. The more useful lens for this audience: development organizations operating in Africa and Asia often face restricted access to US cloud infrastructure — AWS and Azure are either unavailable, prohibitively expensive, or politically complicated. Lower-cost AI that runs on alternative hardware changes the deployment calculus for orgs trying to build internal AI capacity in constrained contexts.
+      </p>
+      <p class="story-tip">If you're advising on AI strategy for a country office with infrastructure constraints, this story belongs in your next briefing.</p>
+      <a class="story-read-more" href="https://techcrunch.com/2026/04/24/deepseek-previews-new-ai-model-that-closes-the-gap-with-frontier-models/" target="_blank" rel="noopener">Read more &rarr;</a>
+    </div>
+
+    <!-- Story 3 -->
+    <div class="story">
+      <div class="story-source">📋 OpenAI</div>
+      <div class="story-title"><a href="https://openai.com/index/our-principles/" target="_blank" rel="noopener">Sam Altman published OpenAI's principles. Development professionals should read them as accountability commitments, not marketing.</a></div>
+      <p class="story-body">
+        Altman published five principles: Democratization, Empowerment, Universal Prosperity, Resilience, and Adaptability. The framing is notable — AI power should be distributed broadly, not captured by a handful of companies, and democratic processes should shape how this technology develops. For development sector professionals, the interesting question is how these principles hold when you notice they were published the same day a $134B governance trial began. <strong>Read the principles first. Then read the timeline.</strong> That gap is where the accountability conversation starts.
+      </p>
+      <a class="story-read-more" href="https://openai.com/index/our-principles/" target="_blank" rel="noopener">Read the principles &rarr;</a>
+      &nbsp;&nbsp;
+      <a class="story-read-more" href="https://www.techloy.com/sam-altman-published-new-openai-principles-hours-before-a-134b-trial-heres-whats-missing/" target="_blank" rel="noopener">Read the timing story &rarr;</a>
+    </div>
+
+    <!-- Story 4 -->
+    <div class="story">
+      <div class="story-source">🔬 Anthropic Research</div>
+      <div class="story-title"><a href="https://the-decoder.com/anthropic-says-stronger-ai-models-cut-better-deals-and-the-losers-dont-even-notice/" target="_blank" rel="noopener">Anthropic's AI agents negotiated real deals in a test marketplace. Weaker models lost without knowing it. The quality gap is consequential.</a></div>
+      <p class="story-body">
+        Anthropic ran "Project Deal," a test environment where AI agents representing buyers and sellers negotiated real agreements. Strong models reached favorable outcomes. Weaker models consistently lost — <strong>and had no awareness that they were losing</strong>. For development organizations deploying AI agents on high-stakes tasks (procurement, proposal matching, evaluation scoring), this is a useful data point: the performance gap between frontier models and cheaper alternatives is real, measurable, and consequential. Not all AI is equal for work that matters.
+      </p>
+      <a class="story-read-more" href="https://the-decoder.com/anthropic-says-stronger-ai-models-cut-better-deals-and-the-losers-dont-even-notice/" target="_blank" rel="noopener">Read more &rarr;</a>
+    </div>
+
+    <!-- SKILL SECTION -->
+    <div class="skill-section">
+
+      <div class="skill-label">Skill of the week</div>
+      <div class="skill-title">The <span>5 inputs</span> that fix generic AI output — before you write a single prompt</div>
+
+      <p class="skill-intro">
+        The most common frustration with AI in consulting work: you ask for something specific and get something generic. You clean it up for an hour and decide it wasn't worth it. This is almost always a briefing problem, not an AI capability problem. Before asking AI for anything serious — a report section, a proposal draft, an analysis — give it these five things.
+      </p>
+
+      <ol class="skill-steps">
+        <li>
+          <span class="step-number">01</span>
+          <div class="step-content"><strong>Who you are.</strong> Your role, your organization type, the sector you work in, the context of this project. "I am an independent consultant working on a UNICEF capacity assessment in West Africa" is infinitely more useful than "write me a report."</div>
+        </li>
+        <li>
+          <span class="step-number">02</span>
+          <div class="step-content"><strong>The role of AI in this task.</strong> Are you asking it to act as a junior analyst, a copy editor, a critical reviewer, a research assistant? Naming the role shapes how it responds.</div>
+        </li>
+        <li>
+          <span class="step-number">03</span>
+          <div class="step-content"><strong>Project details and deliverables.</strong> What is this project? What are the deliverables? What's the audience? A field assessment for a country director reads differently than one for a donor.</div>
+        </li>
+        <li>
+          <span class="step-number">04</span>
+          <div class="step-content"><strong>Objectives and success criteria.</strong> What does a good output look like? What does it need to accomplish? What would make you send it back immediately?</div>
+        </li>
+        <li>
+          <span class="step-number">05</span>
+          <div class="step-content"><strong>An example of excellent past work.</strong> Upload a report section or proposal you're proud of. Tell it: "This is the quality and style I expect." AI calibrates fast when it has a real benchmark.</div>
+        </li>
+      </ol>
+
+      <p class="skill-intro" style="margin-bottom: 8px;">
+        Paste these five things into a Claude Project as your system instructions and every conversation in that project starts with full context — no re-explaining required. Here's a starter template:
+      </p>
+
+      <div class="prompt-box">
+        <div class="prompt-label">Copy-paste starter template</div>
+        <div class="prompt-text">
+          I am [your role] working in [sector/geography]. My typical clients are [type of organization]. My deliverables include [reports / evaluations / proposals / other].<br><br>
+          In this project, you are acting as my AI co-consultant — a highly capable junior analyst who follows instructions precisely, asks clarifying questions when something is ambiguous, and never fabricates data or sources.<br><br>
+          The audience for most of my work is [audience]. The tone should be [professional/technical/accessible]. My quality standard is attached — match the structure and depth of that example.<br><br>
+          When I give you feedback, apply it specifically and immediately. If something is unclear, ask before proceeding.
+        </div>
+      </div>
+
+      <p class="privacy-note">
+        Data privacy note: System instructions in Claude Projects are not shared across sessions and are not visible to other users. Never paste beneficiary names, case numbers, or personally identifiable information. Summarize sensitive data before input — the summary goes in, the raw data stays local.
+      </p>
+
+    </div>
+
+    <!-- OFFER SECTION -->
+    <div class="offer-section">
+
+      <div class="offer-label">Now enrolling</div>
+      <div class="offer-title">The <span>AI-Enabled Consultant</span> — cohort program for international development professionals</div>
+
+      <p class="offer-body">
+        Six weeks. Real deliverables. No theory. Every session is built around the actual work development consultants do — evaluations, assessments, proposals, reports — and how to use AI to do it faster and better without compromising data security or your professional judgment.
+      </p>
+
+      <p class="offer-body" style="margin-bottom: 20px;">
+        Cohort 1 starts April 30. A few seats are still open. Cohort 2 waitlist is now forming.
+      </p>
+
+      <a class="offer-cta" href="https://nathanrodgers.com/ai-enabled-consultant" target="_blank" rel="noopener">Join the waitlist &rarr;</a>
+
+    </div>
+
+  </div>
+
+  <!-- SIGN-OFF + RATING -->
+  <div class="sign-off">
+    <p class="sign-off-text">That's all for this week. See you Monday.</p>
+    <p class="sign-off-name">Nathan Rodgers</p>
+
+    <div class="rating-block">
+      <div class="rating-label">What'd you think of this issue?</div>
+      <div class="rating-options">
+        <a href="#">⭐⭐⭐⭐⭐&nbsp; Nailed it</a>
+        <a href="#">⭐⭐⭐&nbsp; Good, not great</a>
+        <a href="#">⭐&nbsp; Miss</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-links-line">
+      Was this forwarded? <a href="https://thefieldreport.beehiiv.com/subscribe" target="_blank" rel="noopener">Subscribe here.</a>
+      &nbsp;&nbsp;Follow on <a href="https://www.linkedin.com/in/nathanrodgers" target="_blank" rel="noopener">LinkedIn.</a>
+    </div>
+    <div class="footer-links-line">
+      <a href="#">Update your email preferences</a> or <a href="#">unsubscribe here.</a>
+    </div>
+    <div class="footer-legal">
+      &copy; 2026 Nathan Rodgers &nbsp;&middot;&nbsp; Grand Rapids, MI, United States &nbsp;&middot;&nbsp; <a href="#" style="color:#D1D5DB;">Terms</a>
+    </div>
+  </div>
+
+</div><!-- end email-wrapper -->
+
+</body>
+</html>

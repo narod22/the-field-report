@@ -23,7 +23,7 @@
       box-shadow: 0 2px 12px rgba(15,39,63,0.10);
     }
 
-    /* ── HEADER ── */
+    /* HEADER */
     .header {
       background: #0F273F;
       padding: 28px 36px 24px;
@@ -35,13 +35,9 @@
       gap: 14px;
     }
 
-    .keycap-svg {
-      flex-shrink: 0;
-    }
+    .keycap-svg { flex-shrink: 0; }
 
-    .wordmark {
-      flex: 1;
-    }
+    .wordmark { flex: 1; }
 
     .wordmark-title {
       font-size: 22px;
@@ -51,9 +47,7 @@
       line-height: 1;
     }
 
-    .wordmark-title span {
-      color: #FFC107;
-    }
+    .wordmark-title span { color: #FFC107; }
 
     .wordmark-sub {
       font-size: 11px;
@@ -64,7 +58,7 @@
       margin-top: 4px;
     }
 
-    /* ── META STRIP ── */
+    /* META STRIP */
     .meta-strip {
       background: #F4F7FA;
       border-bottom: 2px solid #FFC107;
@@ -93,10 +87,8 @@
       border-radius: 2px;
     }
 
-    /* ── BODY ── */
-    .body {
-      padding: 32px 36px;
-    }
+    /* BODY */
+    .body { padding: 32px 36px; }
 
     .intro {
       font-size: 15px;
@@ -108,11 +100,9 @@
       border-bottom: 1px solid #E5E7EB;
     }
 
-    .intro strong {
-      font-weight: 700;
-    }
+    .intro strong { font-weight: 700; }
 
-    /* Preview list */
+    /* Preview box */
     .preview-box {
       background: #F4F7FA;
       border-left: 3px solid #0F273F;
@@ -153,7 +143,7 @@
       font-weight: 700;
     }
 
-    /* ── SECTION HEADER ── */
+    /* SECTION HEADER */
     .section-header {
       font-size: 10px;
       font-weight: 700;
@@ -173,26 +163,14 @@
       background: #E5E7EB;
     }
 
-    /* ── NEWS STORIES ── */
-    .story {
-      margin-bottom: 24px;
-      padding-bottom: 24px;
-      border-bottom: 1px solid #E5E7EB;
-    }
-
-    .story:last-of-type {
-      margin-bottom: 0;
-      padding-bottom: 0;
-      border-bottom: none;
-    }
-
+    /* SHARED STORY ELEMENTS */
     .story-source {
       font-size: 10px;
       font-weight: 700;
       letter-spacing: 0.16em;
       text-transform: uppercase;
       color: #FF7403;
-      margin-bottom: 4px;
+      margin-bottom: 6px;
     }
 
     .story-title {
@@ -200,29 +178,18 @@
       font-weight: 800;
       color: #0F273F;
       line-height: 1.3;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
       letter-spacing: -0.02em;
     }
 
-    .story-body {
-      font-size: 14px;
-      font-weight: 400;
-      color: #374151;
-      line-height: 1.65;
-    }
-
-    .story-body strong {
-      font-weight: 700;
+    .story-title a {
       color: #0F273F;
+      text-decoration: none;
     }
 
-    .story-tip {
-      margin-top: 8px;
-      font-size: 13px;
-      font-style: italic;
-      color: #6B7280;
-      padding-left: 12px;
-      border-left: 2px solid #FFC107;
+    .story-title a:hover {
+      text-decoration: underline;
+      color: #FF7403;
     }
 
     .story-read-more {
@@ -235,18 +202,111 @@
       letter-spacing: 0.04em;
     }
 
-    .story-read-more:hover {
-      text-decoration: underline;
+    .story-read-more:hover { text-decoration: underline; }
+
+    /* LEAD STORY */
+    .story-lead {
+      background: #F4F7FA;
+      border-radius: 4px;
+      padding: 20px;
+      margin-bottom: 28px;
     }
 
-    /* ── DIVIDER ── */
-    .section-break {
-      margin: 32px 0;
-      border: none;
-      border-top: 2px solid #E5E7EB;
+    .lead-summary {
+      font-size: 14px;
+      color: #374151;
+      line-height: 1.65;
+      margin-bottom: 14px;
     }
 
-    /* ── SKILL SECTION ── */
+    .lead-summary strong {
+      font-weight: 700;
+      color: #0F273F;
+    }
+
+    .lead-bullets {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 14px 0;
+    }
+
+    .lead-bullets li {
+      font-size: 13px;
+      color: #374151;
+      line-height: 1.6;
+      padding: 6px 0 6px 18px;
+      position: relative;
+      border-bottom: 1px solid #E5E7EB;
+    }
+
+    .lead-bullets li:last-child { border-bottom: none; }
+
+    .lead-bullets li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: #FF7403;
+      font-size: 10px;
+      top: 8px;
+    }
+
+    .id-angle {
+      background: #FFFFFF;
+      border-left: 3px solid #FFC107;
+      padding: 10px 14px;
+      font-size: 13px;
+      color: #374151;
+      line-height: 1.6;
+      margin-top: 4px;
+      border-radius: 0 2px 2px 0;
+    }
+
+    .id-angle strong {
+      font-weight: 700;
+      color: #0F273F;
+    }
+
+    /* SHORT STORIES */
+    .story-short {
+      margin-bottom: 22px;
+      padding-bottom: 22px;
+      border-bottom: 1px solid #E5E7EB;
+    }
+
+    .story-short:last-of-type {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .story-short .story-title {
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .short-body {
+      font-size: 13px;
+      color: #374151;
+      line-height: 1.65;
+      margin-bottom: 8px;
+    }
+
+    .short-body strong {
+      font-weight: 700;
+      color: #0F273F;
+    }
+
+    .short-angle {
+      font-size: 12px;
+      font-style: italic;
+      color: #6B7280;
+      border-left: 2px solid #FFC107;
+      padding-left: 10px;
+      margin-bottom: 4px;
+      line-height: 1.6;
+    }
+
+    /* SKILL SECTION */
     .skill-section {
       background: #0F273F;
       border-radius: 4px;
@@ -272,9 +332,7 @@
       margin-bottom: 12px;
     }
 
-    .skill-title span {
-      color: #FFC107;
-    }
+    .skill-title span { color: #FFC107; }
 
     .skill-intro {
       font-size: 13px;
@@ -349,7 +407,61 @@
       border-left: 2px solid #FF7403;
     }
 
-    /* ── SIGN-OFF + FOOTER ── */
+    /* OFFER SECTION */
+    .offer-section {
+      background: #0F273F;
+      border-radius: 4px;
+      padding: 24px 28px;
+      margin-top: 32px;
+    }
+
+    .offer-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.20em;
+      text-transform: uppercase;
+      color: #FF7403;
+      margin-bottom: 6px;
+    }
+
+    .offer-title {
+      font-size: 20px;
+      font-weight: 900;
+      color: #FFFFFF;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .offer-title span { color: #FFC107; }
+
+    .offer-body {
+      font-size: 13px;
+      font-weight: 400;
+      color: #D4DDE7;
+      line-height: 1.65;
+      margin-bottom: 20px;
+    }
+
+    .offer-cta {
+      display: inline-block;
+      background: #FFC107;
+      color: #0F273F;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 3px;
+    }
+
+    .offer-cta:hover {
+      background: #FF7403;
+      color: #FFFFFF;
+    }
+
+    /* SIGN-OFF + FOOTER */
     .sign-off {
       padding: 28px 36px 0;
       border-top: 1px solid #E5E7EB;
@@ -396,9 +508,7 @@
       line-height: 1.8;
     }
 
-    .rating-options a:hover {
-      color: #FF7403;
-    }
+    .rating-options a:hover { color: #FF7403; }
 
     .footer {
       padding: 20px 36px 28px;
@@ -417,80 +527,12 @@
       text-decoration: underline;
     }
 
-    .footer-links-line a:hover {
-      color: #0F273F;
-    }
+    .footer-links-line a:hover { color: #0F273F; }
 
     .footer-legal {
       font-size: 11px;
       color: #D1D5DB;
       line-height: 1.8;
-    }
-
-    .story-title a {
-      color: #0F273F;
-      text-decoration: none;
-    }
-
-    .story-title a:hover {
-      text-decoration: underline;
-      color: #FF7403;
-    }
-
-    /* ── OFFER SECTION ── */
-    .offer-section {
-      background: #0F273F;
-      border-radius: 4px;
-      padding: 24px 28px;
-      margin-top: 32px;
-    }
-
-    .offer-label {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.20em;
-      text-transform: uppercase;
-      color: #FF7403;
-      margin-bottom: 6px;
-    }
-
-    .offer-title {
-      font-size: 20px;
-      font-weight: 900;
-      color: #FFFFFF;
-      letter-spacing: -0.02em;
-      line-height: 1.2;
-      margin-bottom: 12px;
-    }
-
-    .offer-title span {
-      color: #FFC107;
-    }
-
-    .offer-body {
-      font-size: 13px;
-      font-weight: 400;
-      color: #D4DDE7;
-      line-height: 1.65;
-      margin-bottom: 20px;
-    }
-
-    .offer-cta {
-      display: inline-block;
-      background: #FFC107;
-      color: #0F273F;
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      text-decoration: none;
-      padding: 10px 20px;
-      border-radius: 3px;
-    }
-
-    .offer-cta:hover {
-      background: #FF7403;
-      color: #FFFFFF;
     }
   </style>
 </head>
@@ -501,20 +543,12 @@
   <!-- HEADER -->
   <div class="header">
     <div class="header-inner">
-
-      <!-- Keycap Logo SVG -->
       <svg class="keycap-svg" width="52" height="52" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
-        <!-- Outer rounded rect -->
         <rect x="1" y="1" width="50" height="50" rx="11" ry="11" fill="#1a3a54"/>
-        <!-- Orange inner stroke -->
         <rect x="5.5" y="5.5" width="41" height="41" rx="8" ry="8" fill="none" stroke="#FF7403" stroke-width="2.5"/>
-        <!-- Yellow indicator dot -->
         <circle cx="40" cy="11" r="3.5" fill="#FFC107"/>
-        <!-- TFR label -->
         <text x="26" y="31" text-anchor="middle" font-family="Inter, -apple-system, sans-serif" font-weight="900" font-size="16" letter-spacing="-0.5" fill="#FFFFFF">TFR</text>
       </svg>
-
-      <!-- Wordmark -->
       <div class="wordmark">
         <div class="wordmark-title">THE <span>FIELD</span> REPORT</div>
         <div class="wordmark-sub">AI for international development</div>
@@ -531,67 +565,75 @@
   <!-- BODY -->
   <div class="body">
 
-    <!-- Intro -->
+    <!-- INTRO / OPENER -->
     <p class="intro">
       Good Monday. Sam Altman published five principles committing OpenAI to the democratization of AI — on the same day a $134 billion governance trial began against his company. Somewhere, a UNICEF consultant reading this has written twelve accountability frameworks this year alone. The irony is not lost on anyone in this sector. Here's what moved this week.
     </p>
 
-    <!-- Preview box -->
+    <!-- PREVIEW BOX -->
     <div class="preview-box">
       <div class="preview-label">This week</div>
       <ul class="preview-list">
-        <li><strong>Policy:</strong> World Bank's WDR 2026 — what it says, what to skip, and why it's now your reference document</li>
+        <li><strong>Policy + Governance:</strong> World Bank's WDR 2026 — what it says, what to skip, and why it's now your reference document</li>
         <li><strong>General AI:</strong> DeepSeek V4 and the Huawei chip angle that matters more than the benchmarks</li>
-        <li><strong>Accountability:</strong> OpenAI's principles, published the same day as a $134B trial</li>
+        <li><strong>Accountability:</strong> OpenAI's principles, published the same day as a $134B governance trial</li>
         <li><strong>Model quality:</strong> Anthropic's agents closed real deals — and the losing side never knew it lost</li>
         <li><strong>This week's skill:</strong> The 5 inputs that fix generic AI output before you write a single prompt</li>
       </ul>
     </div>
 
-    <!-- Section header -->
+    <!-- SECTION HEADER -->
     <div class="section-header">This week in AI + development</div>
 
-    <!-- Story 1 -->
-    <div class="story">
+    <!-- STORY 1: LEAD — Policy + Governance -->
+    <div class="story-lead">
       <div class="story-source">🌍 World Bank &nbsp;·&nbsp; Policy + Governance</div>
-      <div class="story-title"><a href="https://www.worldbank.org/en/publication/wdr2026" target="_blank" rel="noopener">The WDR 2026 is here. The headline is cautious optimism. The warning is more important.</a></div>
-      <p class="story-body">
-        The World Bank released its World Development Report 2026, focused entirely on AI for development. The headline finding: AI-delivered business advice via smartphones is already producing measurable productivity gains for small enterprises in several markets. That's the good news. The warning buried in Chapter 3 is sharper — <strong>computing infrastructure gaps, data deficits, and skills shortages could widen the divide</strong> between high and lower-income countries rather than close it. For consultants working on digital transformation projects, this document is now your go-to reference for grounding theory-of-change conversations.
+      <div class="story-title"><a href="https://www.worldbank.org/en/publication/wdr2026" target="_blank" rel="noopener">The World Bank published its AI playbook for development. Here's what the sector needs from it.</a></div>
+
+      <p class="lead-summary">
+        The World Bank's World Development Report 2026 dropped this month — the flagship annual report, this year focused entirely on AI and development. The headline finding: AI-delivered services are producing measurable productivity gains for small enterprises in markets with adequate connectivity, particularly in agricultural advice and business coaching.
       </p>
-      <p class="story-tip">Skip to Chapter 3 if you're short on time. It's the most practical section for consultants advising on AI readiness.</p>
+
+      <ul class="lead-bullets">
+        <li>Chapter 3 is the practical entry point: it maps AI readiness barriers by sector and flags the specific infrastructure, data, and skills gaps that matter in lower-income contexts.</li>
+        <li>The central warning is sharper than the headline — computing gaps and data deficits could <strong>widen the AI divide</strong> rather than close it, and that language is already appearing in program design conversations.</li>
+        <li>AI tools are showing measurable impact where baseline connectivity exists: healthcare triage, agricultural extension, and SME coaching across multiple markets are all documented.</li>
+        <li>The WDR carries institutional weight. It will appear in donor TORs and theory-of-change conversations within the next 12 months.</li>
+      </ul>
+
+      <div class="id-angle">
+        <strong>For ID consultants:</strong> This is now the sector's baseline reference document for AI and development. If you're working on any project that touches digital transformation, technology strategy, or AI readiness, the WDR grounds your work in something the donor community already respects. Skip to Chapter 3 if you're short on time — it's the most practically useful section for consultants.
+      </div>
+
       <a class="story-read-more" href="https://www.worldbank.org/en/publication/wdr2026" target="_blank" rel="noopener">Read the WDR 2026 &rarr;</a>
     </div>
 
-    <!-- Story 2 -->
-    <div class="story">
+    <!-- STORY 2: SHORT — General AI, Development Lens -->
+    <div class="story-short">
       <div class="story-source">🤖 DeepSeek &nbsp;·&nbsp; General AI, Development Lens</div>
-      <div class="story-title"><a href="https://techcrunch.com/2026/04/24/deepseek-previews-new-ai-model-that-closes-the-gap-with-frontier-models/" target="_blank" rel="noopener">DeepSeek V4 cuts prices 700x vs. GPT. For development organizations, the infrastructure angle matters more than the benchmarks.</a></div>
-      <p class="story-body">
-        DeepSeek released V4 this week with dramatically lower API pricing and, critically, <strong>support for Huawei chips</strong>. Most coverage focused on the US-China AI race angle. The more useful lens for this audience: development organizations operating in Africa and Asia often face restricted access to US cloud infrastructure — AWS and Azure are either unavailable, prohibitively expensive, or politically complicated. Lower-cost AI that runs on alternative hardware changes the deployment calculus for orgs trying to build internal AI capacity in constrained contexts.
-      </p>
-      <p class="story-tip">If you're advising on AI strategy for a country office with infrastructure constraints, this story belongs in your next briefing.</p>
+      <div class="story-title"><a href="https://techcrunch.com/2026/04/24/deepseek-previews-new-ai-model-that-closes-the-gap-with-frontier-models/" target="_blank" rel="noopener">DeepSeek V4 is here. The Huawei hardware angle matters more than the benchmarks.</a></div>
+      <p class="short-body">DeepSeek released V4 this week with API pricing 700x lower than comparable offerings and, critically, support for Huawei chips — not Nvidia hardware. For development organizations in countries where US cloud infrastructure is restricted, expensive, or politically complicated, this changes the deployment math for building AI capacity in constrained environments.</p>
+      <p class="short-angle"><strong>For ID consultants:</strong> If you're advising a country office with infrastructure constraints, this belongs in your next feasibility analysis — the economics of local AI deployment just shifted.</p>
       <a class="story-read-more" href="https://techcrunch.com/2026/04/24/deepseek-previews-new-ai-model-that-closes-the-gap-with-frontier-models/" target="_blank" rel="noopener">Read more &rarr;</a>
     </div>
 
-    <!-- Story 3 -->
-    <div class="story">
+    <!-- STORY 3: SHORT — Accountability Watch -->
+    <div class="story-short">
       <div class="story-source">📋 OpenAI &nbsp;·&nbsp; Accountability Watch</div>
-      <div class="story-title"><a href="https://openai.com/index/our-principles/" target="_blank" rel="noopener">Sam Altman published OpenAI's principles. Development professionals should read them as accountability commitments, not marketing.</a></div>
-      <p class="story-body">
-        Altman published five principles: Democratization, Empowerment, Universal Prosperity, Resilience, and Adaptability. The framing is notable — AI power should be distributed broadly, not captured by a handful of companies, and democratic processes should shape how this technology develops. For development sector professionals, the interesting question is how these principles hold when you notice they were published the same day a $134B governance trial began. <strong>Read the principles first. Then read the timeline.</strong> That gap is where the accountability conversation starts.
-      </p>
+      <div class="story-title"><a href="https://openai.com/index/our-principles/" target="_blank" rel="noopener">Altman published OpenAI's principles. Read them as accountability commitments, not marketing.</a></div>
+      <p class="short-body">Altman published five principles: Democratization, Empowerment, Universal Prosperity, Resilience, Adaptability. The framing lands differently when you notice they went live on the same day a $134B governance trial began against the company.</p>
+      <p class="short-angle"><strong>For ID consultants:</strong> Read the principles first, then read the timeline. That gap is where the accountability conversation starts for any tech partner you're advising clients to engage.</p>
       <a class="story-read-more" href="https://openai.com/index/our-principles/" target="_blank" rel="noopener">Read the principles &rarr;</a>
       &nbsp;&nbsp;
       <a class="story-read-more" href="https://www.techloy.com/sam-altman-published-new-openai-principles-hours-before-a-134b-trial-heres-whats-missing/" target="_blank" rel="noopener">Read the timing story &rarr;</a>
     </div>
 
-    <!-- Story 4 -->
-    <div class="story">
+    <!-- STORY 4: SHORT — Model Performance -->
+    <div class="story-short">
       <div class="story-source">🔬 Anthropic Research &nbsp;·&nbsp; Model Performance</div>
-      <div class="story-title"><a href="https://the-decoder.com/anthropic-says-stronger-ai-models-cut-better-deals-and-the-losers-dont-even-notice/" target="_blank" rel="noopener">Anthropic's AI agents negotiated real deals in a test marketplace. Weaker models lost without knowing it. The quality gap is consequential.</a></div>
-      <p class="story-body">
-        Anthropic ran "Project Deal," a test environment where AI agents representing buyers and sellers negotiated real agreements. Strong models reached favorable outcomes. Weaker models consistently lost — <strong>and had no awareness that they were losing</strong>. For development organizations deploying AI agents on high-stakes tasks (procurement, proposal matching, evaluation scoring), this is a useful data point: the performance gap between frontier models and cheaper alternatives is real, measurable, and consequential. Not all AI is equal for work that matters.
-      </p>
+      <div class="story-title"><a href="https://the-decoder.com/anthropic-says-stronger-ai-models-cut-better-deals-and-the-losers-dont-even-notice/" target="_blank" rel="noopener">Anthropic's AI agents negotiated real deals in tests. Weaker models lost and didn't know it.</a></div>
+      <p class="short-body">Anthropic ran "Project Deal" — a test marketplace where AI agents negotiated real agreements. Stronger models consistently reached favorable outcomes; weaker models consistently lost and had no awareness they were losing.</p>
+      <p class="short-angle"><strong>For ID consultants:</strong> For organizations deploying AI on high-stakes tasks — procurement, proposal scoring, evaluation — the performance gap between frontier and budget models is real and measurable. Not all AI is interchangeable for consequential work.</p>
       <a class="story-read-more" href="https://the-decoder.com/anthropic-says-stronger-ai-models-cut-better-deals-and-the-losers-dont-even-notice/" target="_blank" rel="noopener">Read more &rarr;</a>
     </div>
 
@@ -655,38 +697,4 @@
       <div class="offer-title">The <span>AI-Enabled Consultant</span> — cohort program for international development professionals</div>
 
       <p class="offer-body">
-        Six weeks. Real deliverables. No theory. Every session is built around the actual work development consultants do — evaluations, assessments, proposals, reports — and how to use AI to do it faster and better without compromising data security or your professional judgment.
-      </p>
-
-      <p class="offer-body" style="margin-bottom: 20px;">
-        Cohort 1 starts April 30. A few seats are still open. Cohort 2 waitlist is now forming.
-      </p>
-
-      <a class="offer-cta" href="https://nathanrodgers.com/ai-enabled-consultant" target="_blank" rel="noopener">Join the waitlist &rarr;</a>
-
-    </div>
-
-  </div>
-
-  <!-- SIGN-OFF + RATING -->
-  <div class="sign-off">
-    <p class="sign-off-text">That's all for this week. See you Monday.</p>
-    <p class="sign-off-name">Nathan Rodgers</p>
-
-    <div class="rating-block">
-      <div class="rating-label">What'd you think of this issue?</div>
-      <div class="rating-options">
-        <a href="#">⭐⭐⭐⭐⭐&nbsp; Nailed it</a>
-        <a href="#">⭐⭐⭐&nbsp; Good, not great</a>
-        <a href="#">⭐&nbsp; Miss</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- FOOTER -->
-  <div class="footer">
-    <div class="footer-links-line">
-      Was this forwarded? <a href="https://thefieldreport.beehiiv.com/subscribe" target="_blank" rel="noopener">Subscribe here.</a>
-      &nbsp;&nbsp;Follow on <a href="https://www.linkedin.com/in/nathanrodgers" target="_blank" rel="noopener">LinkedIn.</a>
-    </div>
-    <div class="footer-link
+        Six weeks. Real deliverables. No theory. Every session is built around the actual work development consultants do — evalu

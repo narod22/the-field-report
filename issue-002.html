@@ -163,26 +163,14 @@
       background: #E5E7EB;
     }
 
-    /* NEWS STORIES */
-    .story {
-      margin-bottom: 24px;
-      padding-bottom: 24px;
-      border-bottom: 1px solid #E5E7EB;
-    }
-
-    .story:last-of-type {
-      margin-bottom: 0;
-      padding-bottom: 0;
-      border-bottom: none;
-    }
-
+    /* SHARED STORY ELEMENTS */
     .story-source {
       font-size: 10px;
       font-weight: 700;
       letter-spacing: 0.16em;
       text-transform: uppercase;
       color: #FF7403;
-      margin-bottom: 4px;
+      margin-bottom: 6px;
     }
 
     .story-title {
@@ -190,7 +178,7 @@
       font-weight: 800;
       color: #0F273F;
       line-height: 1.3;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
       letter-spacing: -0.02em;
     }
 
@@ -202,27 +190,6 @@
     .story-title a:hover {
       text-decoration: underline;
       color: #FF7403;
-    }
-
-    .story-body {
-      font-size: 14px;
-      font-weight: 400;
-      color: #374151;
-      line-height: 1.65;
-    }
-
-    .story-body strong {
-      font-weight: 700;
-      color: #0F273F;
-    }
-
-    .story-tip {
-      margin-top: 8px;
-      font-size: 13px;
-      font-style: italic;
-      color: #6B7280;
-      padding-left: 12px;
-      border-left: 2px solid #FFC107;
     }
 
     .story-read-more {
@@ -237,11 +204,106 @@
 
     .story-read-more:hover { text-decoration: underline; }
 
-    /* DIVIDER */
-    .section-break {
-      margin: 32px 0;
-      border: none;
-      border-top: 2px solid #E5E7EB;
+    /* LEAD STORY */
+    .story-lead {
+      background: #F4F7FA;
+      border-radius: 4px;
+      padding: 20px;
+      margin-bottom: 28px;
+    }
+
+    .lead-summary {
+      font-size: 14px;
+      color: #374151;
+      line-height: 1.65;
+      margin-bottom: 14px;
+    }
+
+    .lead-summary strong {
+      font-weight: 700;
+      color: #0F273F;
+    }
+
+    .lead-bullets {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 14px 0;
+    }
+
+    .lead-bullets li {
+      font-size: 13px;
+      color: #374151;
+      line-height: 1.6;
+      padding: 6px 0 6px 18px;
+      position: relative;
+      border-bottom: 1px solid #E5E7EB;
+    }
+
+    .lead-bullets li:last-child { border-bottom: none; }
+
+    .lead-bullets li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: #FF7403;
+      font-size: 10px;
+      top: 8px;
+    }
+
+    .id-angle {
+      background: #FFFFFF;
+      border-left: 3px solid #FFC107;
+      padding: 10px 14px;
+      font-size: 13px;
+      color: #374151;
+      line-height: 1.6;
+      margin-top: 4px;
+      border-radius: 0 2px 2px 0;
+    }
+
+    .id-angle strong {
+      font-weight: 700;
+      color: #0F273F;
+    }
+
+    /* SHORT STORIES */
+    .story-short {
+      margin-bottom: 22px;
+      padding-bottom: 22px;
+      border-bottom: 1px solid #E5E7EB;
+    }
+
+    .story-short:last-of-type {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .story-short .story-title {
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .short-body {
+      font-size: 13px;
+      color: #374151;
+      line-height: 1.65;
+      margin-bottom: 8px;
+    }
+
+    .short-body strong {
+      font-weight: 700;
+      color: #0F273F;
+    }
+
+    .short-angle {
+      font-size: 12px;
+      font-style: italic;
+      color: #6B7280;
+      border-left: 2px solid #FFC107;
+      padding-left: 10px;
+      margin-bottom: 4px;
+      line-height: 1.6;
     }
 
     /* SKILL SECTION */
@@ -512,137 +574,117 @@
     <div class="preview-box">
       <div class="preview-label">This week</div>
       <ul class="preview-list">
-        <li><strong>AI in the Field:</strong> WFP's HungerMap Live turns global food security data into early warning — deployed now in 50+ countries</li>
-        <li><strong>Policy:</strong> Stanford AI Index 2026 — only 44 nations have state-backed AI compute, and most of your client countries aren't on the list</li>
-        <li><strong>General AI:</strong> DeepSeek V4 ships with a $3.48 price tag and Huawei hardware support — what that actually means for organizations with infrastructure constraints</li>
-        <li><strong>Accountability:</strong> Innovation vs. Cuts — IRC's honest look at what AI ambitions collide with when the funding floor drops out</li>
-        <li><strong>This week's skill:</strong> How to turn 20 KII transcripts into a usable data matrix in under an hour</li>
+        <li><strong>AI in the Field:</strong> WFP's HungerMap Live — AI-assisted hunger forecasting is running now in 50+ countries</li>
+        <li><strong>Policy + Governance:</strong> Stanford AI Index 2026 — only 44 nations have state-backed compute, and most client countries aren't there</li>
+        <li><strong>General AI:</strong> DeepSeek V4 is MIT-licensed, runs on non-US hardware, costs $3.48 per million tokens</li>
+        <li><strong>Accountability:</strong> IRC's honest accounting of what happens when AI ambition meets a sector losing its funding floor</li>
+        <li><strong>This week's skill:</strong> How to build a 30-page consulting report with AI — in days, not weeks</li>
       </ul>
     </div>
 
     <!-- SECTION HEADER -->
     <div class="section-header">This week in AI + development</div>
 
-    <!-- STORY 1: AI in the Field (LEAD) -->
-    <div class="story">
+    <!-- STORY 1: LEAD — AI in the Field -->
+    <div class="story-lead">
       <div class="story-source">🏕 WFP &nbsp;·&nbsp; AI in the Field</div>
-      <div class="story-title"><a href="https://www.wfp.org/news/wfp-releases-hungermap-live-modernized-intelligence-platform-turns-data-global-hunger-early" target="_blank" rel="noopener">WFP launched HungerMap Live. It uses AI-assisted forecasting to spot hunger crises before they spiral — and it's live right now in 50+ countries.</a></div>
-      <p class="story-body">
-        On April 16, WFP released HungerMap Live, a rebuilt intelligence platform that integrates food security monitoring data from 300+ analysts across 50+ countries with AI-assisted forecasting backed by Google.org. The platform answers three specific questions every humanitarian planner needs: what is the current state of food security, which countries need urgent attention right now, and what are the drivers. The operational payoff is concrete — <strong>WFP's anticipatory action programs return $7 for every $1 invested</strong>, and earlier crisis signals are the mechanism that makes that possible. This is not a pilot. It's running.
+      <div class="story-title"><a href="https://www.wfp.org/news/wfp-releases-hungermap-live-modernized-intelligence-platform-turns-data-global-hunger-early" target="_blank" rel="noopener">WFP launched HungerMap Live. AI-assisted hunger forecasting is in production in 50+ countries right now.</a></div>
+
+      <p class="lead-summary">
+        On April 16, WFP released HungerMap Live — a rebuilt intelligence platform integrating food security monitoring from 300+ analysts across 50+ countries with AI-assisted forecasting backed by Google.org. This is not a pilot. It is running now, and the data is publicly accessible.
       </p>
-      <p class="story-tip">For consultants designing monitoring frameworks or theory-of-change documents that reference early warning systems, HungerMap Live is now a concrete, citable example of AI in production at scale. Visit hungermap.wfp.org to see the live data.</p>
+
+      <ul class="lead-bullets">
+        <li>The platform answers three questions every humanitarian planner needs: what is the current food security state, which countries need urgent attention right now, and what is driving the crisis.</li>
+        <li>WFP's anticipatory action programs return <strong>$7 for every $1 invested</strong> — earlier crisis signals are the mechanism that makes that return possible.</li>
+        <li>HungerMap pulls data from satellite imagery, market price feeds, conflict indicators, and 300+ analyst networks into a single dashboard updated continuously.</li>
+        <li>The live platform is publicly accessible at hungermap.wfp.org — useful as a reference tool even if you're not working directly in food security.</li>
+      </ul>
+
+      <div class="id-angle">
+        <strong>For ID consultants:</strong> For consultants designing monitoring frameworks or theory-of-change documents that reference early warning systems, HungerMap Live is now a concrete, citable example of AI in production at scale. It's also a useful benchmark for what "AI-assisted decision-making" looks like when it's actually working — not a pilot, not a proof of concept.
+      </div>
+
       <a class="story-read-more" href="https://news.un.org/en/story/2026/04/1167317" target="_blank" rel="noopener">Read more at UN News &rarr;</a>
     </div>
 
-    <!-- STORY 2: Policy + Governance -->
-    <div class="story">
+    <!-- STORY 2: SHORT — Policy + Governance -->
+    <div class="story-short">
       <div class="story-source">📊 Stanford HAI &nbsp;·&nbsp; Policy + Governance</div>
-      <div class="story-title"><a href="https://hai.stanford.edu/ai-index/2026-ai-index-report" target="_blank" rel="noopener">Stanford's 2026 AI Index: only 44 countries have state-backed AI compute. Most of your client countries are not on that list.</a></div>
-      <p class="story-body">
-        The Stanford Human-Centered AI Institute published its annual AI Index on April 13. The finding that matters most for this audience: the number of nations with state-backed supercomputing clusters sits at 44 — and the report explicitly warns that South American and Middle Eastern countries lag significantly, risking a new "digital divide" where nations that can't shape AI development are less likely to see its economic benefits. Meanwhile, AI engineering skills are growing fastest in UAE, Chile, and South Africa. The picture is uneven, and <strong>the gap between adoption and actual capacity-building is widening</strong> in exactly the geographies where development work concentrates.
-      </p>
-      <p class="story-tip">If you're working on a digital strategy or AI readiness assessment for a government client, the Stanford AI Index is now an annual benchmark worth citing. The sovereign AI infrastructure gap is the single most important structural challenge for the sector.</p>
+      <div class="story-title"><a href="https://hai.stanford.edu/ai-index/2026-ai-index-report" target="_blank" rel="noopener">Stanford's 2026 AI Index: only 44 countries have state-backed AI compute. Most client countries aren't on that list.</a></div>
+      <p class="short-body">Published April 13, the Stanford AI Index finds that state-backed supercomputing infrastructure is concentrated in 44 nations — and explicitly warns that South American, Central Asian, and Sub-Saharan African countries lag significantly, risking a new digital divide in exactly the geographies where development work concentrates. AI engineering skills are growing fastest in UAE, Chile, and South Africa, but infrastructure tells a different story.</p>
+      <p class="short-angle"><strong>For ID consultants:</strong> If you're working on a digital strategy or AI readiness assessment for a government client, the AI Index is the annual benchmark worth citing. The sovereign compute gap is the structural problem framing most development-sector AI conversations right now.</p>
       <a class="story-read-more" href="https://spectrum.ieee.org/state-of-ai-index-2026" target="_blank" rel="noopener">Read the IEEE Spectrum summary &rarr;</a>
     </div>
 
-    <!-- STORY 3: General AI + Development Lens -->
-    <div class="story">
+    <!-- STORY 3: SHORT — General AI, Development Lens -->
+    <div class="story-short">
       <div class="story-source">🤖 DeepSeek &nbsp;·&nbsp; General AI, Development Lens</div>
-      <div class="story-title"><a href="https://www.cnbc.com/2026/04/24/deepseek-v4-llm-preview-open-source-ai-competition-china.html" target="_blank" rel="noopener">DeepSeek V4 costs $3.48 per million output tokens. OpenAI charges $30. For development organizations with constrained budgets, this is a real number.</a></div>
-      <p class="story-body">
-        DeepSeek released a preview of its V4 model on April 24 under the MIT license — meaning it can be downloaded, run locally, and modified. The pricing: $3.48 per million output tokens, compared to $30 for OpenAI's comparable offering. More important for this audience than the benchmark numbers: <strong>V4 is designed to run on Huawei chips</strong>, not Nvidia. Development organizations operating in countries where US cloud infrastructure is restricted, expensive, or politically complicated now have a frontier-capable model that doesn't require AWS or Azure. That changes the deployment math for orgs trying to build internal AI capacity in Africa, Central Asia, and Southeast Asia.
-      </p>
-      <p class="story-tip">The open-source, MIT-licensed nature means government agencies and NGOs can deploy this without ongoing API costs. For consultants advising on AI strategy, this is worth a line in your feasibility analysis.</p>
-      <a class="story-read-more" href="https://www.technologyreview.com/2026/04/24/1136422/why-deepseeks-v4-matters/" target="_blank" rel="noopener">Read MIT Technology Review's take &rarr;</a>
+      <div class="story-title"><a href="https://www.cnbc.com/2026/04/24/deepseek-v4-llm-preview-open-source-ai-competition-china.html" target="_blank" rel="noopener">DeepSeek V4 costs $3.48 per million tokens. OpenAI charges $30. For constrained-budget organizations, this is a real number.</a></div>
+      <p class="short-body">DeepSeek released V4 under the MIT license — meaning it can be downloaded, run locally, and modified without ongoing API costs. V4 also runs on Huawei chips, not Nvidia, which matters for organizations operating in countries where US cloud infrastructure is restricted, expensive, or politically complicated. The economics of local AI deployment just shifted.</p>
+      <p class="short-angle"><strong>For ID consultants:</strong> The MIT license is the operative detail — government agencies and NGOs can deploy this locally without API fees. Worth a line in your next feasibility analysis if you're working in a constrained infrastructure context.</p>
+      <a class="story-read-more" href="https://www.technologyreview.com/2026/04/24/1136422/why-deepseeks-v4-matters/" target="_blank" rel="noopener">Read MIT Tech Review's take &rarr;</a>
     </div>
 
-    <!-- STORY 4: Accountability Watch -->
-    <div class="story">
+    <!-- STORY 4: SHORT — Accountability Watch -->
+    <div class="story-short">
       <div class="story-source">📋 IRC &nbsp;·&nbsp; Accountability Watch</div>
-      <div class="story-title"><a href="https://www.rescue.org/article/innovation-vs-cuts-humanitarian-aid-2026" target="_blank" rel="noopener">Innovation vs. Cuts: the IRC's honest accounting of what happens when AI ambition meets a sector losing its funding floor.</a></div>
-      <p class="story-body">
-        The International Rescue Committee published a direct look at the tension that defines humanitarian AI in 2026: organizations are being pushed to do more with less at the same moment they were supposed to be scaling AI programs built during the boom years. USAID cuts eliminated roughly 83% of grants in 2025, and global humanitarian funding continues to contract. The result: <strong>AI pilots are stalled, not because the technology failed, but because the organizations running them ran out of money</strong>. The sector built ambitious AI programs when the funding was there. The funding is gone and the tools are sitting idle. For independent consultants, the opportunity embedded in this story is real — organizations need help doing more with constrained resources, and that is precisely what AI-enabled workflows can provide.
-      </p>
-      <p class="story-tip">This piece is worth reading if you're positioning yourself for consulting work with humanitarian organizations. The pain point they're solving for is not "find us new AI tools" — it's "help us do the work we were doing, faster, with fewer people."</p>
+      <div class="story-title"><a href="https://www.rescue.org/article/innovation-vs-cuts-humanitarian-aid-2026" target="_blank" rel="noopener">IRC's honest look at AI ambition vs. funding cuts: the pilots are stalled, and the money is gone.</a></div>
+      <p class="short-body">The International Rescue Committee published a direct look at the tension defining humanitarian AI in 2026: organizations are being pushed to do more with less at the same moment they were supposed to be scaling AI programs built during the boom years. AI pilots are stalled not because the technology failed, but because the organizations running them ran out of money — USAID cuts eliminated roughly 83% of grants in 2025 alone.</p>
+      <p class="short-angle"><strong>For ID consultants:</strong> The pain point organizations are solving for right now isn't "find us new AI tools" — it's "help us do the work we were doing, faster, with fewer people." That's a positioning opportunity for consultants who can deliver on it.</p>
       <a class="story-read-more" href="https://www.rescue.org/article/innovation-vs-cuts-humanitarian-aid-2026" target="_blank" rel="noopener">Read more at IRC &rarr;</a>
     </div>
 
-    <hr class="section-break">
-
     <!-- SKILL SECTION -->
     <div class="skill-section">
+
       <div class="skill-label">This week's skill</div>
-      <div class="skill-title">Turn 20 KII transcripts into a <span>usable data matrix</span> in under an hour</div>
+      <div class="skill-title">How to build a <span>30-page consulting report</span> with AI — in days, not weeks</div>
+
       <p class="skill-intro">
-        Key informant interviews generate the most useful data in any evaluation — and the most labor-intensive synthesis work. Most consultants spend 2-3 days manually coding transcripts. Here's a workflow that cuts that to under an hour, without sacrificing rigor.
+        One of the most-requested topics from the AI-Enabled Consultant workshop was report writing: how do you produce a well-structured, evidence-grounded report from a pile of transcripts and data files without spending weeks on it? Here's the exact three-step framework from the workshop, pulled directly from a real UNICEF Chad project — 10 hours of multilingual field transcripts, four years of transaction data, and a 30-page report produced in days.
       </p>
-      <ul class="skill-steps">
+
+      <ol class="skill-steps">
         <li>
           <span class="step-number">01</span>
-          <div class="step-content"><strong>Build your codebook first.</strong> Before touching transcripts, give AI your evaluation questions and ask it to generate a codebook: 8-12 themes with definitions, sub-codes, and example quotes. Review and edit. This takes 15 minutes and makes everything else faster.</div>
+          <div class="step-content"><strong>Prepare the project.</strong> Create a Claude Project (or any AI system that maintains persistent context). Write a system prompt covering: what is this project, who is the audience, what is the deliverable, what your role is as the consultant. Then upload your source documents — interview transcripts, previous reports, data tables, reference frameworks. The AI now has everything it needs to work from your material, not from general knowledge. This setup takes 20-30 minutes and saves days.</div>
         </li>
         <li>
           <span class="step-number">02</span>
-          <div class="step-content"><strong>Process transcripts in batches.</strong> Paste 3-5 transcripts at a time with a clear instruction: "Code these transcripts using the attached codebook. For each theme, extract the most relevant quotes and note which respondent said them." Never paste all transcripts in one message — you lose precision.</div>
+          <div class="step-content"><strong>Build the outline first — and push back on it.</strong> Ask for a three-level-deep outline before you write a word of the report. Don't accept the first version. Iterate 2-3 times: Does every major section connect to an evaluation question? Is the balance between sections right? Are there gaps or overlaps? The outline governs everything that follows — this is the highest-leverage 30 minutes in the entire process.</div>
         </li>
         <li>
           <span class="step-number">03</span>
-          <div class="step-content"><strong>Build the matrix separately.</strong> Once all transcripts are coded, ask AI to organize findings into a data matrix: themes as rows, respondent categories as columns, with quote counts and key examples. This is the table that goes in your annex and feeds your analysis section.</div>
+          <div class="step-content"><strong>Draft section by section, and make the AI audit itself.</strong> Take your approved outline and work through it one section at a time. After each draft, add one validation step: "Does this section accurately reflect the uploaded source documents? Flag any claim or finding that isn't directly supported by the data you have." The AI audits its own output against what you gave it — this is what prevents hallucinated findings from making it into your deliverable.</div>
         </li>
-        <li>
-          <span class="step-number">04</span>
-          <div class="step-content"><strong>Flag divergence explicitly.</strong> Add one instruction: "Note any themes where respondents from different groups gave significantly different responses." This surfaces the analytical tension points you'll want to address — the places where the data doesn't agree.</div>
-        </li>
-      </ul>
+      </ol>
+
+      <p class="skill-intro" style="margin-bottom: 8px;">
+        Starter prompt for Step 2 — adapt this to your project:
+      </p>
+
       <div class="prompt-box">
-        <div class="prompt-label">Copy-paste prompt</div>
+        <div class="prompt-label">Copy-paste starter prompt</div>
         <div class="prompt-text">
-          "I'm conducting a [type] evaluation in [sector/geography]. My key evaluation questions are: [list 3-5 questions]. Generate a codebook with 8-10 themes, each with: a definition (2 sentences), 2-3 sub-codes, and an example of what a relevant quote would look like. Format as a table."
+          "I'm building a [report type, e.g. program evaluation] for [client/context]. My evaluation questions are: [list 3-5]. I've uploaded [source documents]. Draft a three-level-deep outline. Every major section should map to at least one evaluation question. For each section, include a brief note on the primary sources you'll draw from."
         </div>
       </div>
-      <p class="privacy-note">This workflow keeps your transcripts in a single session and doesn't require uploading files to third-party platforms. Works with Claude Projects, ChatGPT, or Gemini — all can hold a codebook in context while you process individual transcripts.</p>
+
+      <p class="privacy-note">
+        This workflow keeps sensitive source material inside your Claude Project — not shared, not used for model training (with Pro or API settings), and not sent to third-party platforms. Summarize any personally identifiable data before uploading. The raw transcripts stay local; the summaries go into the project.
+      </p>
+
     </div>
 
     <!-- OFFER SECTION -->
     <div class="offer-section">
+
       <div class="offer-label">Now enrolling</div>
       <div class="offer-title">The <span>AI-Enabled</span> Consultant</div>
+
       <p class="offer-body">
         An 8-week program for independent development consultants who want to build AI into the way they actually work. Not ChatGPT tutorials. Real workflows for evaluations, proposals, field assessments, and donor reports — built live, on your actual projects. Cohort 1 is underway. Cohort 2 is forming now.
       </p>
-      <a class="offer-cta" href="#" target="_blank" rel="noopener">Join the waitlist &rarr;</a>
-    </div>
 
-  </div><!-- end .body -->
-
-  <!-- SIGN-OFF + RATING -->
-  <div class="sign-off">
-    <p class="sign-off-text">
-      That's all for this week. The gap between what AI can do for this sector and what the sector is actually doing with it is still enormous — which is exactly why this newsletter exists. See you in the field.
-    </p>
-    <p class="sign-off-name">Nathan Rodgers</p>
-
-    <div class="rating-block">
-      <div class="rating-label">How was this issue?</div>
-      <div class="rating-options">
-        <a href="#">&#11088;&#11088;&#11088;&#11088;&#11088; Nailed it</a>
-        <a href="#">&#11088;&#11088;&#11088; Good, not great</a>
-        <a href="#">&#11088; Miss</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- FOOTER -->
-  <div class="footer">
-    <p class="footer-links-line">
-      Was this forwarded to you? <a href="#">Subscribe here</a> &nbsp;&middot;&nbsp;
-      <a href="https://www.linkedin.com/in/nathanrodgers" target="_blank" rel="noopener">LinkedIn</a> &nbsp;&middot;&nbsp;
-      <a href="#">Update preferences</a> &nbsp;&middot;&nbsp;
-      <a href="#">Unsubscribe</a>
-    </p>
-    <p class="footer-legal">&copy; 2026 Nathan Rodgers &nbsp;&middot;&nbsp; Grand Rapids, MI &nbsp;&middot;&nbsp; <a href="#" style="color:#D1D5DB;">Terms</a></p>
-  </div>
-
-</div><!-- end .email-wrapper -->
-</body>
-</html>
+      <a class="offer-cta" href="https://nathanrodgers.com/ai-enabled-consultant" target="_blank" rel="noopener">Join th
